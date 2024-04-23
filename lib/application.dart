@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_webspark_test_app/feature/data/source/local/local_storge_controller.dart';
 import 'package:get/get.dart';
 
 import 'core/core_exports.dart';
@@ -17,7 +18,9 @@ class Application extends StatelessWidget {
       theme: LightTheme.value,
       darkTheme: DarkTheme.value,
       themeMode: ThemeMode.system,
-      initialRoute: AppRouter.initial,
+      initialRoute: Get.find<LocalStorageController>().isAppUrlEmpty
+          ? AppRouter.url
+          : AppRouter.home,
       getPages: [
         GetPage(name: AppRouter.home, page: () => const HomeScreen()),
         GetPage(name: AppRouter.board, page: () => const BoardScreen()),
