@@ -13,6 +13,7 @@ class Application extends StatelessWidget {
       translations: AppLocalization(),
       locale: Get.deviceLocale,
       fallbackLocale: AppLocales.fallbackLocale,
+      initialBinding: AppBindings(),
       theme: LightTheme.value,
       darkTheme: DarkTheme.value,
       themeMode: ThemeMode.system,
