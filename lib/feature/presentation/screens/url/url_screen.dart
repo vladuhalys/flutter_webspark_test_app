@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webspark_test_app/feature/data/source/remote/dio_controller.dart';
+import 'package:flutter_webspark_test_app/feature/presentation/screens/url/validation/url_validation_controller.dart';
 import 'package:get/get.dart';
 
 class UrlScreen extends StatelessWidget {
@@ -11,12 +11,23 @@ class UrlScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Url Screen'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Get.find<DioController>().get('https://');
-          },
-          child: const Text('Open Home Screen'),
+      body: GetBuilder<UrlValidationController>(
+        builder: (controller) => Column(
+          children: [
+            TextField(
+              onChanged: (value) {
+                controller.validateUrl(value);
+              },
+              decoration: InputDecoration(
+                hintText: 'Enter Url',
+                errorText: controller.errorText.value.tr,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Next'),
+            ),
+          ],
         ),
       ),
     );
