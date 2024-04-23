@@ -8,6 +8,12 @@ class LocalStorageController extends GetxController {
     encryptedSharedPreferences: true,
   ));
 
+  @override
+  void onInit() {
+    super.onInit();
+    getData();
+  }
+
   var appUrl = ''.obs;
 
   bool get isAppUrlEmpty => appUrl.value.isNullOrEmpty();
