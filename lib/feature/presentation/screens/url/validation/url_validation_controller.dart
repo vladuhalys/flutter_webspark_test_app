@@ -7,10 +7,11 @@ class UrlValidationController extends GetxController {
   var errorText = ''.obs;
 
   void validateUrl(String value) {
-    if (value.trim().isNullOrEmpty()) {
+    url.value = value;
+    if (url.value.trim().isNullOrEmpty()) {
       isValidUrl.value = false;
       errorText.value = LangKeys.requiredUrl;
-    } else if (GetUtils.isURL(value)) {
+    } else if (GetUtils.isURL(url.value)) {
       isValidUrl.value = true;
       errorText.value = '';
     } else {

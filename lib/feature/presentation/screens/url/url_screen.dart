@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webspark_test_app/core/localization/keys/keys.dart';
+import 'package:flutter_webspark_test_app/core/router/router_exports.dart';
 import 'package:flutter_webspark_test_app/core/theme/colors/dark_colors.dart';
 import 'package:flutter_webspark_test_app/feature/data/source/local/local_storge_controller.dart';
 import 'package:flutter_webspark_test_app/feature/presentation/screens/url/validation/url_validation_controller.dart';
@@ -58,7 +59,7 @@ class UrlScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     controller.validateUrl(controller.url.value);
-                    if (controller.isValidUrl.value) {
+                    if (controller.isValidUrl.value == true) {
                       Get.find<LocalStorageController>()
                           .saveData(controller.url.value);
                       Get.snackbar(
@@ -67,7 +68,7 @@ class UrlScreen extends StatelessWidget {
                         backgroundColor: Colors.green,
                         colorText: Colors.white,
                       );
-                      Get.offNamed('/home');
+                      Get.offNamed(AppRouter.home);
                     }
                   },
                   child: Text(LangKeys.setUrl.tr,

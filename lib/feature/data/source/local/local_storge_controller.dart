@@ -12,6 +12,7 @@ class LocalStorageController extends GetxController {
   void onInit() {
     super.onInit();
     getData();
+    update();
   }
 
   var appUrl = ''.obs;
