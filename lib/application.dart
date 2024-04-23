@@ -18,7 +18,7 @@ class Application extends StatelessWidget {
       theme: LightTheme.value,
       darkTheme: DarkTheme.value,
       themeMode: ThemeMode.system,
-      initialRoute: Get.find<LocalStorageController>().isAppUrlEmpty
+      initialRoute: Get.put(LocalStorageController()).isAppUrlEmpty
           ? AppRouter.url
           : AppRouter.home,
       getPages: [

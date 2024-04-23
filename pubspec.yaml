@@ -21,7 +21,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/animations/error_animation.json
-    - assets/animations/load_animation.json
-    - assets/animations/success_animation.json

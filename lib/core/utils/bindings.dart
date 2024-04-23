@@ -1,6 +1,5 @@
 import 'package:flutter_webspark_test_app/core/localization/controller/localization_controller.dart';
 import 'package:flutter_webspark_test_app/core/theme/controller/theme_controller.dart';
-import 'package:flutter_webspark_test_app/feature/data/source/local/local_storge_controller.dart';
 import 'package:flutter_webspark_test_app/feature/data/source/remote/dio_controller.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +8,6 @@ class AppBindings extends Bindings {
   void dependencies() {
     Get.lazyPut<LocalizationController>(() => LocalizationController());
     Get.lazyPut<ThemeController>(() => ThemeController());
-    Get.lazyPut<LocalStorageController>(() => LocalStorageController());
     Get.lazyPut<DioController>(() => DioController());
   }
 }

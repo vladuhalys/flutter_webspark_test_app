@@ -9,8 +9,8 @@ class DioController extends GetxController {
   Future<void> get(String url) async {
     try {
       final response = await dio.get(url);
-      Get.dialog(
-          ErrorDialog(errorTitel: 'Text', errorText: response.toString()));
+      Get.dialog(ErrorDialog(
+          errorTitel: "My titel", errorText: 'Response: ${response.data}'));
     } catch (e) {
       Get.dialog(ErrorDialog(
           errorTitel: LangKeys.connectionError, errorText: e.toString()));

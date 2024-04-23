@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webspark_test_app/core/core_exports.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 class ErrorDialog extends StatelessWidget {
   const ErrorDialog(
@@ -12,18 +11,23 @@ class ErrorDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Lottie.asset(AppAssetsConst.errorAnimation),
-          Text(
-            errorTitel.tr,
-          ),
-          Text('${LangKeys.dialogDescription.tr} $errorText'),
-        ],
-      )),
+    return AlertDialog(
+      title: Text(errorTitel.tr),
+      content: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Text('${LangKeys.dialogDescription.tr}$errorText'),
+          ],
+        ),
+      ),
+      actions: <Widget>[
+        TextButton(
+          child: Text(LangKeys.dialogAprove.tr),
+          onPressed: () {
+            Get.back();
+          },
+        ),
+      ],
     );
   }
 }

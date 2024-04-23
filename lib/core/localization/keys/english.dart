@@ -6,5 +6,6 @@ abstract class English {
 
     //Info messages
     'dialog_description': 'Description: ',
+    'dialog_aprove': 'Approve',
   };
 }
