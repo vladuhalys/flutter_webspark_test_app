@@ -9,4 +9,5 @@ abstract class LangKeys {
   //Info messages
   static const dialogDescription = 'dialog_description';
   static const dialogAprove = 'dialog_aprove';
+  static const setUrl = 'set_url';
 }

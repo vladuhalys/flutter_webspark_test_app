@@ -7,6 +7,7 @@ abstract class English {
     //Warning messages
 
     //Info messages
+    'set_url': 'Set URL',
     'dialog_description': 'Description: ',
     'dialog_aprove': 'Approve',
   };

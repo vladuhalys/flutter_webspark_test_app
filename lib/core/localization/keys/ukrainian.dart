@@ -9,5 +9,7 @@ abstract class Ukrainian {
 
     //Info messages
     'dialog_description': 'Опис: ',
+    'dialog_aprove': 'Підтвердити',
+    'set_url': 'Встановити URL',
   };
 }
