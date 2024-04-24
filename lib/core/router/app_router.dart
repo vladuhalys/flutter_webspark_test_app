@@ -5,4 +5,5 @@ abstract class AppRouter {
   static const board = '/board';
   static const loading = '/loading';
   static const initial = '/initial';
+  static const list = '/list';
 }
