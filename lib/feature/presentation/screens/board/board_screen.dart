@@ -50,6 +50,17 @@ class BoardScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 5),
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0),
+            child: Text(
+              controller.currentSelectedType.value.toString(),
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           if (controller.isValid.value)
             const Expanded(
               child: BoardWidget(),

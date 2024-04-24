@@ -1,7 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_webspark_test_app/feature/domain/entities/points_entity.dart';
 import 'package:flutter_webspark_test_app/feature/presentation/screens/board/board_controllers/board_controller.dart';
+import 'package:flutter_webspark_test_app/feature/presentation/screens/board/widgets/card_widget.dart';
 import 'package:get/get.dart';
 
 class BoardWidget extends StatelessWidget {
@@ -17,10 +18,12 @@ class BoardWidget extends StatelessWidget {
         children: List.generate(
           controller.boardSize.value,
           (index) {
-            return Container(
-              margin: const EdgeInsets.all(1),
-              color: index % 2 == 0 ? Colors.black : Colors.white,
-            );
+            
+            return CardWidget(
+                point: PointEntity(
+                  index ~/ sqrt(controller.boardSize.value).ceil(),
+                  index % sqrt(controller.boardSize.value).ceil(),
+                ));
           },
         ),
       );

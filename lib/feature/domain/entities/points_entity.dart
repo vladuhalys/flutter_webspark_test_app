@@ -1,16 +1,21 @@
 import 'package:equatable/equatable.dart';
 
-class Point extends Equatable {
+class PointEntity extends Equatable {
   final int x;
   final int y;
 
-  const Point(this.x, this.y);
+  const PointEntity(this.x, this.y);
+
+  @override
+  String toString() {
+    return '($x, $y)';
+  }
 
   @override
   List<Object?> get props => [x, y];
 
-  factory Point.fromJson(Map<String, dynamic> json) {
-    return Point(
+  factory PointEntity.fromJson(Map<String, dynamic> json) {
+    return PointEntity(
       json['x'] as int,
       json['y'] as int,
     );
@@ -22,6 +27,4 @@ class Point extends Equatable {
       'y': y,
     };
   }
-} 
-
-
+}
