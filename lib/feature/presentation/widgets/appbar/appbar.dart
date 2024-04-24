@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_webspark_test_app/core/localization/controller/localization_controller.dart';
 import 'package:flutter_webspark_test_app/core/theme/controller/theme_controller.dart';
 import 'package:get/get.dart';
 
@@ -22,6 +23,23 @@ class CustomAppBarState extends State<CustomAppBar> {
       title: Text(widget.title.tr),
       centerTitle: true,
       actions: [
+        GetBuilder<LocalizationController>(
+          builder: (controller) {
+            return TextButton(
+              onPressed: () {
+                controller.changeLocale();
+              },
+              child: Text(
+                controller.locale.languageCode.toUpperCase(),
+                style: TextStyle(
+                  color: Theme.of(context).iconTheme.color,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            );
+          },
+        ),
         GetBuilder<ThemeController>(
           builder: (controller) => IconButton(
             icon: Icon(

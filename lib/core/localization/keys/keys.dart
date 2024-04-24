@@ -7,9 +7,13 @@ abstract class LangKeys {
   //Warning messages
 
   //Info messages
+  static const setUrl = 'set_url';
+  static const appUrl = 'app_url';
+  static const changeUrl = 'change_url';
+
+  //Dialog messages
   static const dialogDescription = 'dialog_description';
   static const dialogAprove = 'dialog_aprove';
-  static const setUrl = 'set_url';
   static const dialogCancel = 'dialog_cancel';
   static const snackbarSuccess = 'snackbar_success';
   static const snackbarUrlSaved = 'snackbar_url_saved';
@@ -19,4 +23,5 @@ abstract class LangKeys {
 
   //Screen titles
   static const screenUrlTitle = 'screen_url_title';
+  static const screenHomeTitle = 'screen_home_title';
 }

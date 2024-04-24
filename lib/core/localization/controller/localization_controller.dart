@@ -3,9 +3,7 @@ import 'package:flutter_webspark_test_app/core/localization/locale.dart';
 import 'package:get/get.dart';
 
 class LocalizationController extends GetxController {
-  
-
-  final _locale = Get.locale?.obs ?? const Locale('uk', 'UK').obs;
+  final _locale = Get.deviceLocale?.obs ?? const Locale('uk', 'UK').obs;
 
   Locale get locale => _locale.value;
 
@@ -37,22 +35,24 @@ class LocalizationController extends GetxController {
 
   void setUkrLocale() {
     _locale.value = AppLocales.ukrLocale;
+    Get.updateLocale(_locale.value);
     update();
   }
 
   void setEngLocale() {
     _locale.value = AppLocales.engLocale;
+    Get.updateLocale(_locale.value);
     update();
   }
 
   void setDefaultLocale() {
     _locale.value = AppLocales.defaultLocale;
+    Get.updateLocale(_locale.value);
     update();
   }
 
   void changeLocale() {
     _locale.value == AppLocales.ukrLocale ? setEngLocale() : setUkrLocale();
-    Get.updateLocale(_locale.value);
     update();
   }
 }

@@ -8,6 +8,10 @@ abstract class English {
 
     //Info messages
     'set_url': 'Set URL',
+    'app_url': 'App URL',
+    'change_url': 'Change URL',
+
+    //Dialog messages
     'dialog_description': 'Description: ',
     'dialog_aprove': 'Approve',
     'dialog_cancel': 'Cancel',
@@ -19,5 +23,6 @@ abstract class English {
 
     //Screen titles
     'screen_url_title': 'Url Screen',
+    'screen_home_title': 'Home Screen',
   };
 }

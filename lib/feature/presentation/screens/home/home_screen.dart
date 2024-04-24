@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_webspark_test_app/core/localization/keys/keys.dart';
 import 'package:flutter_webspark_test_app/core/router/app_router.dart';
 import 'package:flutter_webspark_test_app/core/theme/colors/dark_colors.dart';
 import 'package:flutter_webspark_test_app/feature/data/source/local/local_storge_controller.dart';
@@ -13,13 +14,13 @@ class HomeScreen extends StatelessWidget {
     return GetBuilder<LocalStorageController>(builder: (controller) {
       controller.getData();
       return Scaffold(
-          appBar: const CustomAppBar(title: 'Home Screen'),
+          appBar: const CustomAppBar(title: LangKeys.screenHomeTitle),
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'App Url: ${controller.appUrl.value}',
+                  '${LangKeys.appUrl.tr}: ${controller.appUrl.value}',
                   style: TextStyle(
                     color: Theme.of(context).hintColor,
                     fontSize: 16,
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Get.toNamed(AppRouter.url);
                   },
-                  child: Text('Change Url',
+                  child: Text(LangKeys.changeUrl.tr,
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                             color: AppDarkColors.textColor,
                           )),

@@ -10,7 +10,7 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       translations: AppLocalization(),
-      locale: Get.deviceLocale,
+      locale: AppLocales.defaultLocale,
       fallbackLocale: AppLocales.fallbackLocale,
       initialBinding: AppBindings(),
       theme: LightTheme.value,
