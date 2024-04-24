@@ -13,7 +13,7 @@ class UrlScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Url Screen'),
+      appBar: const CustomAppBar(title: LangKeys.screenUrlTitle),
       body: GetBuilder<UrlValidationController>(
         builder: (controller) => Padding(
           padding: const EdgeInsets.all(10.0),
@@ -32,7 +32,7 @@ class UrlScreen extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                     ),
                   ),
-                  hintText: 'Enter Url',
+                  hintText: LangKeys.hintEnterUrl.tr,
                   hintStyle: TextStyle(
                     color: Theme.of(context).hintColor,
                     fontSize: 16,
@@ -63,8 +63,8 @@ class UrlScreen extends StatelessWidget {
                       Get.find<LocalStorageController>()
                           .saveData(controller.url.value);
                       Get.snackbar(
-                        'Success',
-                        'Url saved successfully',
+                        LangKeys.snackbarSuccess.tr,
+                        LangKeys.snackbarUrlSaved.tr,
                         backgroundColor: Colors.green,
                         colorText: Colors.white,
                       );

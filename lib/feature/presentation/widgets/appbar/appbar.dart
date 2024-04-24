@@ -19,7 +19,7 @@ class CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(widget.title),
+      title: Text(widget.title.tr),
       centerTitle: true,
       actions: [
         GetBuilder<ThemeController>(

@@ -11,5 +11,14 @@ abstract class Ukrainian {
     'dialog_description': 'Опис: ',
     'dialog_aprove': 'Підтвердити',
     'set_url': 'Встановити URL',
+    'dialog_cancel': 'Скасувати',
+    'snackbar_success': 'Успіх',
+    'snackbar_url_saved': 'URL успішно збережено',
+
+    //Hint messages
+    'hint_enter_url': 'Введіть URL',
+
+    //Screen titles
+    'screen_url_title': 'Екран URL',
   };
 }

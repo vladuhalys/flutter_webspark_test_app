@@ -10,5 +10,14 @@ abstract class English {
     'set_url': 'Set URL',
     'dialog_description': 'Description: ',
     'dialog_aprove': 'Approve',
+    'dialog_cancel': 'Cancel',
+    'snackbar_success': 'Success',
+    'snackbar_url_saved': 'Url saved successfully',
+
+    //Hint messages
+    'hint_enter_url': 'Enter Url',
+
+    //Screen titles
+    'screen_url_title': 'Url Screen',
   };
 }
