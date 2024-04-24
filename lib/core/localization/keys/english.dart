@@ -4,6 +4,8 @@ abstract class English {
     'connection_error': 'Something went wrong...',
     'invalid_url': 'Invalid URL',
     'required_url': 'URL field is required',
+    'required_board_size': 'Board size field is required',
+    'invalid_board_size': 'Board size must be between 1 and 100',
     //Warning messages
 
     //Info messages
@@ -20,6 +22,7 @@ abstract class English {
 
     //Hint messages
     'hint_enter_url': 'Enter Url',
+    'hint_enter_board_size': 'Enter board size',
 
     //Screen titles
     'screen_url_title': 'Url Screen',

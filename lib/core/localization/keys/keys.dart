@@ -3,6 +3,8 @@ abstract class LangKeys {
   static const connectionError = 'connection_error';
   static const invalidUrl = 'invalid_url';
   static const requiredUrl = 'required_url';
+  static const requiredBoardSize = 'required_board_size';
+  static const invalidBoardSize = 'invalid_board_size';
 
   //Warning messages
 
@@ -20,6 +22,7 @@ abstract class LangKeys {
 
   //Hint messages
   static const hintEnterUrl = 'hint_enter_url';
+  static const hintEnterBoardSize = 'hint_enter_board_size';
 
   //Screen titles
   static const screenUrlTitle = 'screen_url_title';

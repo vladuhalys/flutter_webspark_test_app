@@ -4,6 +4,8 @@ abstract class Ukrainian {
     'connection_error': 'Щось пішло не так...',
     'invalid_url': 'Невірний URL',
     'required_url': 'Поле URL є обов\'язковим',
+    'required_board_size': 'Поле розміру дошки є обов\'язковим',
+    'invalid_board_size': 'Розмір дошки повинен бути від 1 до 100',
 
     //Warning messages
 
@@ -21,6 +23,7 @@ abstract class Ukrainian {
 
     //Hint messages
     'hint_enter_url': 'Введіть URL',
+    'hint_enter_board_size': 'Введіть розмір дошки',
 
     //Screen titles
     'screen_url_title': 'Екран URL',
