@@ -24,5 +24,10 @@ abstract class English {
     //Screen titles
     'screen_url_title': 'Url Screen',
     'screen_home_title': 'Home Screen',
+
+    //Bottom navigation bar
+    'home': 'Home',
+    'list': 'List',
+    'board': 'Board',
   };
 }

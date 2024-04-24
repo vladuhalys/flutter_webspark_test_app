@@ -25,5 +25,10 @@ abstract class Ukrainian {
     //Screen titles
     'screen_url_title': 'Екран URL',
     'screen_home_title': 'Головний екран',
+
+    //Bottom navigation bar
+    'home': 'Головна',
+    'list': 'Список',
+    'board': 'Дошка',
   };
 }

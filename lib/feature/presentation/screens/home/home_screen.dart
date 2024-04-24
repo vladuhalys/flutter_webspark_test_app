@@ -4,6 +4,7 @@ import 'package:flutter_webspark_test_app/core/router/app_router.dart';
 import 'package:flutter_webspark_test_app/core/theme/colors/dark_colors.dart';
 import 'package:flutter_webspark_test_app/feature/data/source/local/local_storge_controller.dart';
 import 'package:flutter_webspark_test_app/feature/presentation/widgets/appbar/appbar.dart';
+import 'package:flutter_webspark_test_app/feature/presentation/widgets/bottom_bar/custom_bottom_bar.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,32 +15,34 @@ class HomeScreen extends StatelessWidget {
     return GetBuilder<LocalStorageController>(builder: (controller) {
       controller.getData();
       return Scaffold(
-          appBar: const CustomAppBar(title: LangKeys.screenHomeTitle),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '${LangKeys.appUrl.tr}: ${controller.appUrl.value}',
-                  style: TextStyle(
-                    color: Theme.of(context).hintColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+        appBar: const CustomAppBar(title: LangKeys.screenHomeTitle),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '${LangKeys.appUrl.tr}: ${controller.appUrl.value}',
+                style: TextStyle(
+                  color: Theme.of(context).hintColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
                 ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    Get.toNamed(AppRouter.url);
-                  },
-                  child: Text(LangKeys.changeUrl.tr,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: AppDarkColors.textColor,
-                          )),
-                ),
-              ],
-            ),
-          ));
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Get.toNamed(AppRouter.url);
+                },
+                child: Text(LangKeys.changeUrl.tr,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: AppDarkColors.textColor,
+                        )),
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar: const CustomBottomBar(),
+      );
     });
   }
 }

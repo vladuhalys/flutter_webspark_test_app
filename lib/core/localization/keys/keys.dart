@@ -24,4 +24,9 @@ abstract class LangKeys {
   //Screen titles
   static const screenUrlTitle = 'screen_url_title';
   static const screenHomeTitle = 'screen_home_title';
+
+  //Bottom navigation bar
+  static const home = 'home';
+  static const list = 'list';
+  static const board = 'board';
 }
