@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webspark_test_app/core/core_exports.dart';
 import 'package:flutter_webspark_test_app/feature/data/source/local/local_storge_controller.dart';
-import 'package:flutter_webspark_test_app/feature/presentation/screens/board/widgets/selected_button.dart';
 import 'package:flutter_webspark_test_app/feature/presentation/screens/screens_export.dart';
 import 'package:flutter_webspark_test_app/feature/presentation/widgets/widgets_export.dart';
 import 'package:get/get.dart';
@@ -21,7 +20,6 @@ class HomeScreen extends StatelessWidget {
               body: SafeArea(
                 child: _switchWidget(bottomBarController.currentIndex.value),
               ),
-              floatingActionButton: const CardTypeItem(),
               bottomNavigationBar: const CustomBottomBar(),
             );
           },
@@ -37,8 +35,6 @@ Widget _switchWidget(int value) {
       return const HomeBody();
     case 1:
       return const ListScreen();
-    case 2:
-      return const BoardScreen();
     default:
       return const HomeBody();
   }

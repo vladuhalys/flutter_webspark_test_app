@@ -12,11 +12,15 @@ abstract class English {
     'set_url': 'Set URL',
     'app_url': 'App URL',
     'change_url': 'Change URL',
+    'path': 'Path',
+    'path_to_server': 'Send to server',
+    'calculate': 'Calculate',
 
     //Dialog messages
     'dialog_description': 'Description: ',
     'dialog_aprove': 'Approve',
     'dialog_cancel': 'Cancel',
+    'dialog_loading': 'Loading...',
     'snackbar_success': 'Success',
     'snackbar_url_saved': 'Url saved successfully',
 
@@ -27,6 +31,8 @@ abstract class English {
     //Screen titles
     'screen_url_title': 'Url Screen',
     'screen_home_title': 'Home Screen',
+    'screen_list_title': 'List Screen',
+    'screen_board_title': 'Board Screen',
 
     //Bottom navigation bar
     'home': 'Home',

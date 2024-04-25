@@ -13,11 +13,15 @@ abstract class Ukrainian {
     'set_url': 'Встановити URL',
     'app_url': 'URL додатку',
     'change_url': 'Змінити URL',
+    'path': 'Шлях',
+    'path_to_server': 'Відправити на сервер',
+    'calculate': 'Розрахувати',
 
     //Dialog messages
     'dialog_description': 'Опис: ',
     'dialog_aprove': 'Підтвердити',
     'dialog_cancel': 'Скасувати',
+    'dialog_loading': 'Завантаження...',
     'snackbar_success': 'Успіх',
     'snackbar_url_saved': 'URL успішно збережено',
 
@@ -28,6 +32,8 @@ abstract class Ukrainian {
     //Screen titles
     'screen_url_title': 'Екран URL',
     'screen_home_title': 'Головний екран',
+    'screen_list_title': 'Список',
+    'screen_board_title': 'Дошка',
 
     //Bottom navigation bar
     'home': 'Головна',

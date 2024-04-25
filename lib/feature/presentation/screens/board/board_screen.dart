@@ -1,72 +1,78 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webspark_test_app/core/localization/keys/keys.dart';
+import 'package:flutter_webspark_test_app/core/core_exports.dart';
 import 'package:flutter_webspark_test_app/feature/presentation/screens/board/widgets/board_widget.dart';
+import 'package:flutter_webspark_test_app/feature/presentation/screens/list/list_controller.dart';
 import 'package:get/get.dart';
-
-import 'board_controllers/board_controller.dart';
 
 class BoardScreen extends StatelessWidget {
   const BoardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<BoardController>(builder: (controller) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: TextField(
-              onChanged: (value) {
-                controller.setBoardSize(int.tryParse(value) ?? 0);
-                controller.validateSize();
-              },
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Get.back();
+            },
+          ),
+          title: Text(LangKeys.screenBoardTitle.tr),
+        ),
+        body: GetBuilder<ListController>(
+          builder: (controller) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    controller.getSelectedPath().initPath,
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
-                hintText: LangKeys.hintEnterBoardSize.tr,
-                hintStyle: TextStyle(
-                  color: Theme.of(context).hintColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal,
+                const Expanded(
+                  child: BoardWidget(),
                 ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.only(left: 15.0),
-            child: Text(
-              controller.errorMessage.value.tr,
-              style: TextStyle(
-                color: controller.isValid.value ? Colors.green : Colors.red,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.only(left: 15.0),
-            child: Text(
-              controller.currentSelectedType.value.toString(),
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          if (controller.isValid.value)
-            const Expanded(
-              child: BoardWidget(),
-            ),
-        ],
-      );
-    });
+                const SizedBox(height: 5),
+                (controller.getSelectedPath().path.isNotEmpty)
+                    ? Text(
+                        '${LangKeys.path.tr}: ${controller.getSelectedPath().finalPath}')
+                    : Container(),
+                const SizedBox(height: 25),
+                (controller.getSelectedPath().path.isNotEmpty)
+                    ? ElevatedButton(
+                        onPressed: () {
+                          controller.sendToServer();
+                        },
+                        child: Text(
+                          LangKeys.pathToServer.tr,
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    color: AppDarkColors.textColor,
+                                  ),
+                        ),
+                      )
+                    : ElevatedButton(
+                        onPressed: () {
+                          controller.calculatePathPoint();
+                        },
+                        child: Text(
+                          LangKeys.calculate.tr,
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    color: AppDarkColors.textColor,
+                                  ),
+                        ),
+                      ),
+                const SizedBox(height: 25),
+              ],
+            );
+          },
+        ),
+      ),
+    );
   }
 }

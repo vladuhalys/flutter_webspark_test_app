@@ -3,6 +3,7 @@ import 'package:flutter_webspark_test_app/core/localization/keys/keys.dart';
 import 'package:flutter_webspark_test_app/core/router/app_router.dart';
 import 'package:flutter_webspark_test_app/core/theme/colors/dark_colors.dart';
 import 'package:flutter_webspark_test_app/feature/data/source/local/local_storge_controller.dart';
+import 'package:flutter_webspark_test_app/feature/data/source/remote/dio_controller.dart';
 import 'package:get/get.dart';
 
 class HomeBody extends StatelessWidget {
@@ -10,6 +11,7 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.find<DioController>().get();
     return GetBuilder<LocalStorageController>(
       builder: (controller) {
         return Center(

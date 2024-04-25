@@ -21,7 +21,6 @@ class Application extends StatelessWidget {
         GetPage(name: AppRouter.home, page: () => const HomeScreen()),
         GetPage(name: AppRouter.board, page: () => const BoardScreen()),
         GetPage(name: AppRouter.settings, page: () => const SettingsScreen()),
-        GetPage(name: AppRouter.loading, page: () => const LoadingScreen()),
         GetPage(name: AppRouter.url, page: () => const UrlScreen()),
         GetPage(name: AppRouter.initial, page: () => const InitialScreen()),
         GetPage(name: AppRouter.list, page: () => const ListScreen()),

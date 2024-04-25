@@ -13,7 +13,7 @@ class CustomBottomBar extends StatelessWidget {
     return GetBuilder<CustomBottomBarController>(builder: (controller) {
       return SalomonBottomBar(
         currentIndex: controller.currentIndex.value,
-        onTap: (index) => controller.changeIndex(index), 
+        onTap: (index) => controller.changeIndex(index),
         items: [
           /// Home
           SalomonBottomBarItem(
@@ -27,13 +27,6 @@ class CustomBottomBar extends StatelessWidget {
             icon: const Icon(Icons.list),
             title: Text(LangKeys.list.tr),
             selectedColor: Colors.pink,
-          ),
-
-          /// Search
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.developer_board_off),
-            title: Text(LangKeys.board.tr),
-            selectedColor: Colors.orange,
           ),
         ],
       );

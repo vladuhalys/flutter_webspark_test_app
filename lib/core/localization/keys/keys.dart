@@ -12,11 +12,15 @@ abstract class LangKeys {
   static const setUrl = 'set_url';
   static const appUrl = 'app_url';
   static const changeUrl = 'change_url';
+  static const path = 'path';
+  static const pathToServer = 'path_to_server';
+  static const calculate = 'calculate';
 
   //Dialog messages
   static const dialogDescription = 'dialog_description';
   static const dialogAprove = 'dialog_aprove';
   static const dialogCancel = 'dialog_cancel';
+  static const dialogLoading = 'dialog_loading';
   static const snackbarSuccess = 'snackbar_success';
   static const snackbarUrlSaved = 'snackbar_url_saved';
 
@@ -27,6 +31,8 @@ abstract class LangKeys {
   //Screen titles
   static const screenUrlTitle = 'screen_url_title';
   static const screenHomeTitle = 'screen_home_title';
+  static const screenListTitle = 'screen_list_title';
+  static const screenBoardTitle = 'screen_board_title';
 
   //Bottom navigation bar
   static const home = 'home';
